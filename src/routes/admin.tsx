@@ -154,8 +154,9 @@ function OrdersAdmin() {
     queryKey: ["admin", "orders"],
     queryFn: async () => (await supabase.from("orders").select("*, order_items(*)").order("created_at", { ascending: false })).data ?? [],
   });
-  const statuses = ["pending", "confirmed", "shipped", "delivered", "cancelled"];
-  async function updateStatus(id: string, status: string) {
+  const statuses = ["pending", "confirmed", "shipped", "delivered", "cancelled"] as const;
+  type Status = typeof statuses[number];
+  async function updateStatus(id: string, status: Status) {
     const { error } = await supabase.from("orders").update({ status }).eq("id", id);
     if (error) toast.error(error.message); else { toast.success("Updated"); qc.invalidateQueries({ queryKey: ["admin", "orders"] }); }
   }
@@ -171,7 +172,7 @@ function OrdersAdmin() {
             <div className="mt-1 text-[10px] text-muted-foreground">{new Date(o.created_at).toLocaleString()}</div>
           </div>
           <div className="text-right font-medium">{formatPKR(o.total)}</div>
-          <select value={o.status} onChange={(e) => updateStatus(o.id, e.target.value as any)}
+          <select value={o.status} onChange={(e) => updateStatus(o.id, e.target.value as Status)}
             className="rounded-md border border-border bg-background px-2 py-1 text-sm">
             {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
