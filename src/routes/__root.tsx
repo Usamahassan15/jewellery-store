@@ -117,8 +117,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <ToastProvider />
     </QueryClientProvider>
   );
+}
+
+import { Toaster } from "sonner";
+function ToastProvider() {
+  return <Toaster position="top-center" richColors />;
 }
