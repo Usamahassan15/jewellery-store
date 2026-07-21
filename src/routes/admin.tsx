@@ -171,7 +171,7 @@ function OrdersAdmin() {
             <div className="mt-1 text-[10px] text-muted-foreground">{new Date(o.created_at).toLocaleString()}</div>
           </div>
           <div className="text-right font-medium">{formatPKR(o.total)}</div>
-          <select value={o.status} onChange={(e) => updateStatus(o.id, e.target.value)}
+          <select value={o.status} onChange={(e) => updateStatus(o.id, e.target.value as any)}
             className="rounded-md border border-border bg-background px-2 py-1 text-sm">
             {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
