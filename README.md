@@ -1,26 +1,66 @@
 # Jewellery Store
 
-https://zeesy.pk/   clone this exact website
+A modern, premium jewellery e-commerce website featuring a luxury-focused UI, interactive product presentation, and a fully functional backend.
 
-generate backend also . make everything workable. add 3D slider animation in hero section in BG . jewellery 360 rotate kry
+## Features
 
-This project was built with [Lovable](https://lovable.dev).
+* Premium jewellery e-commerce interface
+* Responsive design for desktop, tablet, and mobile
+* Interactive hero section with 3D jewellery animation
+* 360° jewellery rotation experience
+* Product listings and product details
+* Shopping cart functionality
+* User authentication
+* Order management
+* Backend REST APIs
+* Database integration
+* Admin/product management
+* Responsive and performance-focused design
 
-## Build with Lovable
+## Tech Stack
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d1216692-35a9-4849-9963-40ef64d31149).
+### Frontend
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+* TypeScript
+* React
+* Next.js
+* Tailwind CSS
+
+### Backend
+
+* Python
+* FastAPI
+* REST APIs
+* PostgreSQL
+
+### Tools
+
+* Git & GitHub
+* Docker
+
+## Project Overview
+
+This project demonstrates my experience in building modern full-stack e-commerce applications with a focus on responsive UI, API integration, backend development, and interactive product experiences.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### Run Frontend
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
 npm run dev
 ```
+
+### Run Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+## Project Status
+
+**Full-Stack Development Project**
+
+Frontend, backend, API integration, database functionality, and interactive UI components are included in the project.
